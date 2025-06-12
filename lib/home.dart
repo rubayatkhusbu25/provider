@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:provider_state_app/number_list.dart';
 import 'package:provider_state_app/second.dart';
 
 class Home extends StatefulWidget {
@@ -12,11 +10,11 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
+  List<int> numbers =[1,2,3,4];
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<NumberList>(
-      builder:(context, numberList, child)=> Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title: Text("Provider"),
         ),
@@ -24,16 +22,16 @@ class _HomeState extends State<Home> {
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
-              Text(numberList.numbers.last.toString(),style: TextStyle(fontSize: 30)),
+              Text(numbers.last.toString(),style: TextStyle(fontSize: 30)),
               Expanded(
                   child: ListView.builder(
-                    itemCount: numberList.numbers.length,
+                    itemCount: numbers.length,
                       itemBuilder: (context, index){
       
-                        return Text(numberList.numbers[index].toString(),style: TextStyle(fontSize: 30),);
+                        return Text(numbers[index].toString(),style: TextStyle(fontSize: 30),);
                       })),
               ElevatedButton(onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>Second()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Second(numbers: numbers)));
               }, child: Text("Second",style: TextStyle(color: Colors.white),),
               style: ButtonStyle(
                 backgroundColor: WidgetStatePropertyAll(Colors.blue),
@@ -44,13 +42,17 @@ class _HomeState extends State<Home> {
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add),
             onPressed: (){
-            numberList.add();
 
 
+              setState(() {
+
+              });
+             int last = numbers.last + 1;
+              numbers.add(last);
       
             }),
       
-      ),
+
     );
   }
 }
