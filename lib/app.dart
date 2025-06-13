@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'e_commerce_provider/box_list.dart';
 import 'e_commerce_provider/e_home.dart';
-import 'home.dart';
-import 'number_list.dart';
+
 
 class App extends StatelessWidget {
   const App({super.key});
