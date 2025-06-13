@@ -6,6 +6,7 @@ class BoxList extends ChangeNotifier{
 
   void add(){
     boxes.add(boxes.length);
+    notifyListeners();
 
   }
 }
