@@ -4,6 +4,7 @@ import 'e_commerce_provider/box_list.dart';
 import 'e_commerce_provider/e_home.dart';
 import 'e_commerce_provider/multiple_provider/opacity_changer.dart';
 import 'e_commerce_provider/multiple_provider/opacity_changer_provider.dart';
+import 'favourite_app/favourite_screen1.dart';
 
 
 class App extends StatelessWidget {
@@ -23,7 +24,7 @@ class App extends StatelessWidget {
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
-        home: OpacityChanger(),
+        home: FavouriteScreen1(),
       ),
     );
   }
