@@ -4,6 +4,7 @@ import 'e_commerce_provider/box_list.dart';
 import 'e_commerce_provider/e_home.dart';
 import 'e_commerce_provider/multiple_provider/opacity_changer.dart';
 import 'e_commerce_provider/multiple_provider/opacity_changer_provider.dart';
+import 'favourite_app/fav_provider.dart';
 import 'favourite_app/favourite_screen1.dart';
 
 
@@ -16,7 +17,8 @@ class App extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context)=> BoxList()),
-        ChangeNotifierProvider(create: (context)=> OpacityChangerProvider())
+        ChangeNotifierProvider(create: (context)=> OpacityChangerProvider()),
+        ChangeNotifierProvider(create: (context)=>FavProvider()),
       ],
       child: MaterialApp(
         title: 'Provider',
